@@ -43,6 +43,7 @@ loop do
   #continue playing?
   puts "Play again (y/n)?"
   reply = gets.chomp.downcase
-  break if reply =="n"
+  break if reply != "y"
 end 
 
+puts "Thanks for playing!"

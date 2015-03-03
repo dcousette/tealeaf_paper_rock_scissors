@@ -2,7 +2,16 @@
 # 2. compare choices: paper > rock, rock > scissors, scissors > paper. tie only if pick same.
 # 3. play again?
 
-
+def display_winning_message(winning_choice)
+  case winning_choice
+  when 'p'
+    puts "Paper smothers Rock!"
+  when 'r'
+    puts "Rock crushes Scissors!"
+  when 's'
+    puts "Scissors shreds Paper!"
+  end
+end 
 
 CHOICES = {'p' => 'Paper', 'r' => 'Rock', 's' => 'Scissors'}
 puts "Welcome to Paper, Rock, Scissors!"
@@ -14,7 +23,6 @@ loop do
     player_choice = gets.chomp.downcase
   end until CHOICES.keys.include?(player_choice)
   
-  
   #computer makes pick
   computer_choice = CHOICES.keys.sample
   
@@ -24,11 +32,12 @@ loop do
   
   #if player wins  
   elsif (player_choice == 'p' && computer_choice == 'r') || (player_choice == 'r' && computer_choice == 's')||(player_choice == 's' && computer_choice == 'p')
-    puts "You picked #{player_choice}. Computer picked #{computer_choice}. You win!"
-  
+    display_winning_message(player_choice)
+    puts "You won!"
   #if computer wins
-  elsif (computer_choice == 'p' && player_choice == 'r')||(computer_choice == 'r' && player_choice == 's')||(computer_choice == 's' && player_choice == 'p')
-    puts "You picked #{player_choice}. Computer picked #{computer_choice}. Computer wins!"
+  else
+    display_winning_message(computer_choice)
+    puts "Computer won!"
   end
   
   #continue playing?

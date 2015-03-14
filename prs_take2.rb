@@ -18,8 +18,8 @@ end
 
 loop do 
   begin 
-  puts "Choose one: r / p / s ?"
-  player_choice = gets.chomp.downcase
+    puts "Choose one: r / p / s ?"
+    player_choice = gets.chomp.downcase
   end until CHOICES.keys.include?(player_choice)
   
   computer_choice = CHOICES.keys.sample

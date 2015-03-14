@@ -10,7 +10,6 @@ class Player
 end
 
 class Human < Player
-  
   def make_choice 
     begin 
     puts "Choose one: r / p / s ?"
@@ -23,16 +22,13 @@ class Human < Player
 end 
 
 class Computer < Player
-  
   def make_choice 
     self.choice = CHOICES.keys.sample
     puts "Computer chooses #{CHOICES[choice]}"
   end 
 end 
 
-
 class Game 
-
   attr_reader :player, :computer
   
   def initialize
@@ -68,7 +64,6 @@ class Game
       puts "Scissors shred Paper!"  
     end
   end 
-  
 end
 
 prs = Game.new.play 
